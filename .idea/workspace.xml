@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4bd96a9a-48a7-4302-94dc-8f381b393096" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="marketprices">
+      <favorite_root url="file://$PROJECT_DIR$/modal.html" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Pug File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1TFwqI7o3eHcWJHOLO6Cd7b8NtG" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.16.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DogukanSahin\WebstormProjects\marketprices\public\img\productImages" />
+      <recent name="C:\Users\DogukanSahin\WebstormProjects\marketprices\public\img\marketImages" />
+      <recent name="C:\Users\DogukanSahin\WebstormProjects\marketprices\public\views\admin" />
+      <recent name="C:\Users\DogukanSahin\WebstormProjects\marketprices\public\views\user" />
+      <recent name="C:\Users\DogukanSahin\WebstormProjects\marketprices\public\views\htmlpages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DogukanSahin\WebstormProjects\marketprices\public\views\admin" />
+      <recent name="C:\Users\DogukanSahin\WebstormProjects\marketprices\public\img\productImages" />
+      <recent name="C:\Users\DogukanSahin\WebstormProjects\marketprices\public\img" />
+      <recent name="C:\Users\DogukanSahin\WebstormProjects\marketprices\public\views\user" />
+      <recent name="C:\Users\DogukanSahin\WebstormProjects\marketprices\views" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4bd96a9a-48a7-4302-94dc-8f381b393096" name="Default Changelist" comment="" />
+      <created>1573069340865</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573069340865</updated>
+      <workItem from="1573069342862" duration="18726000" />
+      <workItem from="1573163297913" duration="112000" />
+      <workItem from="1573246694871" duration="7476000" />
+      <workItem from="1573256272176" duration="15000" />
+      <workItem from="1573506882252" duration="11331000" />
+      <workItem from="1573586140339" duration="6578000" />
+      <workItem from="1573642554213" duration="9596000" />
+      <workItem from="1573725519788" duration="13317000" />
+      <workItem from="1573842330597" duration="11322000" />
+      <workItem from="1575964956759" duration="24788000" />
+      <workItem from="1576180586073" duration="1068000" />
+      <workItem from="1576181673151" duration="675000" />
+      <workItem from="1576182366065" duration="128000" />
+      <workItem from="1576182511231" duration="402000" />
+      <workItem from="1576182929126" duration="149000" />
+      <workItem from="1576183095993" duration="19010000" />
+      <workItem from="1576284474043" duration="3076000" />
+      <workItem from="1576538396247" duration="426000" />
+      <workItem from="1576538838858" duration="5436000" />
+      <workItem from="1576544651751" duration="1377000" />
+      <workItem from="1576584335499" duration="14230000" />
+      <workItem from="1576608783764" duration="3585000" />
+      <workItem from="1576612387074" duration="3082000" />
+      <workItem from="1576615594955" duration="4315000" />
+      <workItem from="1576671716632" duration="8849000" />
+      <workItem from="1576681354574" duration="16935000" />
+      <workItem from="1576760599176" duration="16000" />
+      <workItem from="1576782904269" duration="2261000" />
+      <workItem from="1576880410397" duration="13124000" />
+      <workItem from="1576951864107" duration="14428000" />
+      <workItem from="1577098937551" duration="4000" />
+      <workItem from="1577132443304" duration="5697000" />
+      <workItem from="1577138672345" duration="6231000" />
+      <workItem from="1577218738376" duration="1634000" />
+      <workItem from="1577220389138" duration="9423000" />
+      <workItem from="1577306493126" duration="2135000" />
+      <workItem from="1577308645857" duration="4227000" />
+      <workItem from="1577312895407" duration="6192000" />
+      <workItem from="1577320322080" duration="2036000" />
+      <workItem from="1577362417187" duration="809000" />
+      <workItem from="1577363249674" duration="8029000" />
+      <workItem from="1577377195543" duration="10640000" />
+      <workItem from="1577403302067" duration="730000" />
+      <workItem from="1577446000679" duration="172000" />
+      <workItem from="1577649018241" duration="100000" />
+      <workItem from="1577712850146" duration="790000" />
+      <workItem from="1577813743285" duration="16000" />
+      <workItem from="1577814014098" duration="1890000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

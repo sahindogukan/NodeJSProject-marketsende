@@ -1,0 +1,34 @@
+extends ../layout/admin-main-layout
+
+block content
+    .row
+        .col-md-12
+            .card.mb-5(style="margin-left:auto; margin-right:auto; width: 50em;")
+                .card-header
+                    .row(style="margin-left:5px")
+                        span
+                            h3
+                                b Market Ekle
+                            hr
+                            if(action != null && action === "error")
+                                div.alert.alert-danger Lütfen bütün alanları eksiksiz doldurun.
+                            if(action != null && action === "add")
+                                div.alert.alert-danger Market ekleme işlemi başarıyla tamamlandı.
+                            if(action != null && action === "imgerror")
+                                div.alert.alert-danger Lütfen bir market logosu seçiniz.
+
+                .card-body
+                    form(action='/admin/add-market' method="POST" enctype="multipart/form-data")
+                        .row.form-group
+                            label(for="name").col-form-label.col-sm-3
+                                b Market ismi:
+                            .col-sm-9
+                                input#name.form-control(type='text' name='name')
+                        .row.form-group
+                            label(for="img").col-form-label.col-sm-3
+                                b Market logosu için bir fotoğraf seçin:
+                            .col-sm-9
+                                input#img.form-control-file(type='file' name='img')
+                        .form-group
+                            .col-sm-6.offset-1
+                                button.btn.btn-primary.offset-4(type='submit') Kategori Ekle

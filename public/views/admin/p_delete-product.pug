@@ -1,0 +1,40 @@
+extends ../layout/admin-main-layout
+
+block content
+    .row.mt-3
+            .card.mb-5(style="margin-left:auto; margin-right:auto; width: 50em;")
+                .card-body
+                    h2 Ürünü silmek istediğinizden emin misiniz?
+                    hr
+                    .row
+                        .col-md-3
+                            img(src=`/img/productImages/${product.img}`).img-fluid
+                        .col-md-9
+                            form(action='/admin/delete-product' method="POST")
+                                input(type="hidden" name="id" value=`${product.id}`)
+                                .row.form-group
+                                    label.col-form-label.col-sm-4(for="name")
+                                        b Ürün ismi:
+                                    .col-sm-8
+                                        label#name #{product.name}
+                                .row.form-group
+                                    label.col-form-label.col-sm-4
+                                        b Ürün Güncel Fiyatı:
+                                    .col-sm-8
+                                        label #{product.price}
+                                .row.form-group
+                                    label.col-form-label.col-sm-4
+                                        b Ürün Açıklaması:
+                                    .col-sm-8
+                                        label #{product.desc}
+                                .row.form-group
+                                    label.col-form-label.col-sm-4
+                                        b Market:
+                                    .col-sm-8
+                                        label #{product.market}
+                                .form-group
+                                    .col-sm-6.offset-2
+                                        form
+                                            button.btn.btn-outline-danger.offset-4(type='submit') Sil
+                                            a.btn.btn-outline-primary.ml-2(href="/admin") Vazgeç
+

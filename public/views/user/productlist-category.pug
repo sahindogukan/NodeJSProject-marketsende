@@ -1,0 +1,38 @@
+extends ../layout/main-layout
+block content
+    .row
+        .col-md-12
+            .card.text-center(style='background-color: #F22459')
+                .card-header-sm
+                    each ctg in categories
+                        a.btn.btn-mg.btn-link.categoryName(href=`/categories/${ctg.id}`)
+                            | #{ctg.name}
+                        span(style='color: aliceblue') |
+    .row.mt-2
+        .col-md-12
+            hr
+            h3(style="color:gray") Anasayfa >
+                span(style="color:gray")  #{cname}
+                span(style="color:darkgreen") > İndirimler
+    .row(style="margin-top:20px")
+        if products.length > 0
+            each pr in products
+                .col-md-3
+                    .product-card
+                        .product-card-thumbnail
+                            a(href='#')
+                                img(src=`../img/productImages/${pr.img}` height="180px" width="180")
+                        h2.product-card-title
+                            a(href=`/detail/${pr.id}`) #{pr.name}
+                            each mar in marketList
+                                if (pr.marketid == mar.id)
+                                    img(src=`../img/productImages/${mar.logoImg}`).margin
+                        span.product-card-desc #{pr.desc}
+                        span.product-card-price #{pr.price}₺
+                        span.product-card-sale #{pr.sale}₺
+
+        else
+            h1(style="margin-left:auto; margin-right:auto") Henüz Ürün Bulunmamaktadır.
+
+
+

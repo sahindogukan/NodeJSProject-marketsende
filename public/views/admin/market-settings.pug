@@ -1,0 +1,50 @@
+extends ../layout/admin-main-layout
+
+block content
+    .row
+        .col-md-12
+            if(action != null && action === "delete")
+                div.alert.alert-danger Market silme işlemi başarıyla tamamlandı.
+            if(action !== null && action === "add")
+                div.alert.alert-success Market ekleme işlemi başarıyla tamamlandı.
+            if(action !== null && action === "update")
+                div.alert.alert-primary Market güncelleme işlemi başarıyla tamamlandı.
+            .card
+                .card-header
+                    .row(style="margin-left:5px")
+                        span
+                            h3
+                                b Market Ayarları
+                            hr
+
+                            form.form-inline.my-2.my-lg-0
+                                a.btn.btn-outline-primary.ml-2(href='/admin' role='button') Admin Paneline Dön
+                                a.btn.btn-outline-primary.ml-2(href='/admin/add-market' role='button') Yeni Market Ekle
+
+
+
+
+                .card-body
+                    table.table.table-bordered
+                        thead.thead-dark
+                            tr
+                                th Market id
+                                th Market adı
+                                th Market logo
+                                th
+                        tbody
+                            each market in markets
+                                tr
+                                    tr
+                                        td
+                                            span.adminCategory(style="color:black") #{market.id}
+                                        td
+                                            span.adminCategory(style="color:black") #{market.name}
+                                        td
+                                            img(src=`../img/productImages/${market.logoImg}`)
+                                        td
+                                            a.btn.btn-outline-primary.btn-sm(href=`/admin/edit-market/${market.id}`) Güncelle
+                                            form(action='/admin/delete-market' method="POST")
+                                                input(type="hidden" name="id" value=`${market.id}`)
+                                                button(type="submit").btn.btn-outline-danger.btn-sm.ml-2 Sil
+

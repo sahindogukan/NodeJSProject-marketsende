@@ -1,0 +1,119 @@
+
+.product-card {
+    background-color: #fefefe;
+    border: 1px solid #e6e6e6;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.product-card-thumbnail {
+    display: block;
+    position: relative;
+}
+
+.product-card-title {
+    font-family: Arial;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.45rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.product-card-desc {
+    color: #8a8a8a;
+    display: block;
+    font-family: 'Open sans', sans-serif;
+    font-size: 0.85rem;
+}
+
+.product-card-price {
+    font-family: Tahoma;
+    font-size: 22px;
+    color: #009000;
+    display: inline-block;
+    font-weight: 500;
+    margin-top: 0.8rem;
+}
+
+.product-card-sale {
+    color: darkred;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    text-decoration: line-through;
+}
+
+.product-card-colors {
+    display: block;
+    margin-top: 0.8rem;
+}
+
+.product-card-color-option {
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+}
+
+.categoryName {
+    color: aliceblue;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: larger;
+}
+.h3 {
+    color: #F22459;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 30px
+}
+.salery {
+    color: darkgreen;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+.nav-text {
+    font-family: 'Chivo', 'Britannic Bold';
+    color: #F22459;
+    font-size: xx-large;
+    margin: 5px
+}
+
+.btn-link:hover{
+    font-size: x-large;
+    text-decoration: none;
+    color: white;
+}
+
+.bg-4 {
+    background-color: #F22459;
+    color: #fff;
+}
+
+.footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: lightgray;
+    text-align: right;}
+.margin {
+    position: absolute;
+    right: 25px;
+}
+
+.adminCategory {
+    font-family: Verdana;
+    color: black;
+}
+
+.ctgCard {
+    background-color: #F22459;
+}
+
+form{
+    display: inline;
+}

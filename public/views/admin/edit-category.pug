@@ -1,0 +1,29 @@
+extends ../layout/admin-main-layout
+
+block content
+    .row.mt-3
+        .col-sm-6(style="margin-left:auto; margin-right:auto; width: 50em;")
+            .card.mb-5
+                if (action !== null && action === "error")
+                    div.alert.alert-danger Lütfen zorunlu alanları eksiksiz şekilde doldurun. (Kategori ismi)
+                .card-header
+                    h1 #{error}
+                    h5 Kategori Güncelle
+                .card-body
+                    .row
+                        .col-md-12
+                            form(action='/admin/edit-category' method="POST")
+                                input(type="hidden" name="id" value=`${category.id}`)
+                                .row.form-group
+                                    label(for="name").col-form-label.col-sm-3
+                                        b Kategori ismi:
+                                    .col-sm-9
+                                        input#name.form-control(type='text' name='name' value=`${category.name}`)
+                                .row.form-group
+                                    label(for="desc").col-form-label.col-sm-3
+                                        b Kategori Açıklaması:
+                                    .col-sm-9
+                                        textarea#desc.form-control(type='text' name='desc' cols=10 rows=10) #{category.desc}
+                                .form-group
+                                    .col-sm-6.offset-1
+                                        button.btn.btn-primary.offset-4(type='submit') Güncelle

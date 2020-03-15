@@ -1,0 +1,72 @@
+extends ../layout/main-layout
+
+block content
+    .row
+        .col-md-12
+            .card.text-center(style='background-color: #F22459')
+                    .card-header-sm
+                        each ctg in categoryList
+                            a.btn.btn-mg.btn-link.categoryName(href=`/categories/${ctg.id}`)
+                                | #{ctg.name}
+                            span(style='color: aliceblue') |
+
+    .row.justify-content-md-center.mt-3
+        .col-md-10
+            #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+                ol.carousel-indicators
+                    li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+                    li(data-target='#carouselExampleIndicators' data-slide-to='1')
+                    li(data-target='#carouselExampleIndicators' data-slide-to='2')
+                    li(data-target='#carouselExampleIndicators' data-slide-to='3')
+                    li(data-target='#carouselExampleIndicators' data-slide-to='4')
+                .carousel-inner
+                    each slider in sliders
+                        if (slider.isActive == "active")
+                            .carousel-item.active
+                                img.d-block.w-100(src=`../img/productImages/${slider.img}` alt='...' width="945px" height="300px")
+                        else
+                            .carousel-item
+                                img.d-block.w-100(src=`../img/productImages/${slider.img}` alt='...' width="945px" height="300px")
+                a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.sr-only Next
+                hr
+    each ctg in categoryList
+        .row.mt-3
+            .col-md-12
+                h3.h3 #{ctg.name}
+                    span.salery.ml-2 İndirimleri
+                    span(style="color:darkgreen").ml-2.i.fas.fa-arrow-down
+                    hr
+
+
+
+        .row.mt-3.mx-3
+            if products.length > 0
+                each pr in products
+                    if(ctg.id==pr.categoryid)
+                        .col-md-3
+                            .product-card
+                                .product-card-thumbnail
+                                    a(href='#')
+                                        img(src=`../img/productImages/${pr.img}` height="180px" width="180")
+                                h2.product-card-title
+                                    a(href=`detail/${pr.id}`) #{pr.name}
+                                        span.ml-3(style="color:gray") #{ctg.name}
+                                    each mar in marketList
+                                        if (pr.marketid == mar.id)
+                                            img(src=`../img/productImages/${mar.logoImg}`).margin
+                                label(style="overflow:hidden; width:200px").product-card-desc #{pr.desc}
+                                span.product-card-price #{pr.price}₺
+                                span.product-card-sale #{pr.sale}₺
+
+            else
+                h1(style="margin-left:auto; margin-right:auto") Henüz Ürün Bulunmamaktadır.
+
+
+
+
+

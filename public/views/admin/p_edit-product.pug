@@ -1,0 +1,55 @@
+extends ../layout/admin-main-layout
+
+block content
+    .row.mt-3
+        .col-sm-6(style="margin-left:auto; margin-right:auto; width: 50em;")
+            .card.mb-5
+                if (action !== null && action ==="error")
+                    div.alert.alert-danger Lütfen bütün alanları eksiksiz şekilde doldurun.
+                .card-header
+                    h5 Ürün Güncelle
+                .card-body
+                    .row
+                        .col-md-12
+                            form(action='/admin/edit-product' method="POST" enctype="multipart/form-data")
+                                input(type="hidden" name="id" value=`${product.id}`)
+                                .row.form-group
+                                    label(for="name").col-form-label.col-sm-3
+                                        b Ürün ismi:
+                                    .col-sm-9
+                                        input#name.form-control(type='text' name='name' value=`${product.name}`)
+                                .row.form-group
+                                    label(for="price").col-form-label.col-sm-3
+                                        b Ürün Güncel Fiyatı:
+                                    .col-sm-9
+                                        input#price.form-control(type='text' name='price' value=`${product.price}`)
+                                .row.form-group
+                                    label(for="desc").col-form-label.col-sm-3
+                                        b Ürün Açıklaması:
+                                    .col-sm-9
+                                        textarea#desc.form-control(type='text' name='desc' cols=10 rows=10) #{product.desc}
+                                .row.form-group
+                                    label(for="category").col-form-label.col-sm-3
+                                        b Ürün kategorisi:
+                                    .col-sm-9
+                                        select.form-control#category(name='categoryid')
+                                            option(value="-1") Kategori Seçin
+                                            each ctg in categories
+                                                option(value=`${ctg.id}` selected=ctg.id==product.categoryid) #{ctg.name}
+                                .row.form-group
+                                    label(for="img").col-form-label.col-sm-3
+                                        b Ürün fotoğrafı:
+                                    .col-sm-9
+                                        input#img(type='file' name='img')
+                                        img(src=`/img/productImages/${product.img}`)
+                                .row.form-group
+                                    label(for="market").col-form-label.col-sm-3
+                                        b Market:
+                                    .col-sm-9
+                                        select.form-control#market(name='marketid')
+                                            option(value="-1") Market Seçin
+                                            each mar in marketList
+                                                option(value=`${mar.id}` selected=product.marketid==mar.id) #{mar.name}
+                                .form-group
+                                    .col-sm-6.offset-1
+                                        button.btn.btn-primary.offset-4(type='submit') Güncelle

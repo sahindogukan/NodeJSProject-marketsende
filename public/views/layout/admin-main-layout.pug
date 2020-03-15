@@ -1,0 +1,34 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title #{title}
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+    link(href='https://fonts.googleapis.com/css?family=Roboto&display=swap' rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=IBM+Plex+Sans:500&display=swap' rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Chivo:700&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='../css/style.css')
+    script(src='../../app.js')
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+    script(src='https://kit.fontawesome.com/ad79ca9f6c.js' crossorigin='anonymous')
+
+nav.navbar.navbar-expand.navbar-light.bg-light.fixed-top
+    a.navbar-brand.nav-text(href='/' style='color: #F22459')
+        | marketsende|
+        span(style='color: #000080') admin
+    .container
+        ul.navbar-nav.mr
+        ul.navbar-nav.ml
+            li.nav-item
+                a.btn.btn-outline-secondary.ml-2(href='/' role='button') Çıkış Yap
+.container-fluid(style='padding-top: 110px')
+    .row
+        .col-md-12
+            block content
+
+.card
+    .card-body.fixed-bottom
+        blockquote
+            footer.blockquote-footer.text-right made by Dogukan Sahin
+                a.ml-2(href="dogukansahin.net") dogukansahin.net

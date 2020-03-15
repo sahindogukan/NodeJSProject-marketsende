@@ -1,0 +1,91 @@
+extends ../layout/admin-main-layout
+
+block content
+    .row.mt-3
+        .col-sm-6
+            .card.mb-5
+                .card-header
+                    a.btn.btn-outline-primary(href='/admin' role='button') Admin Paneline Dön
+                    hr
+                    h5 Ürün Ekle
+                    if(errorMessage)
+                        div.alert.alert-danger #{errorMessage}
+                .card-body
+                    .row
+                        .col-md-12
+                            form(action='/admin/add-product' method="POST" enctype="multipart/form-data")
+                                .row.form-group
+                                    label(for="name").col-form-label.col-sm-3
+                                        b Ürün ismi:
+                                    .col-sm-9
+                                        input#name.form-control(type='text' name='name')
+                                .row.form-group
+                                    label(for="oldPrice").col-form-label.col-sm-3
+                                        b Kampanya Öncesi Fiyatı:
+                                    .col-sm-9
+                                        input#oldPrice.form-control(type='number' name='oldprice')
+                                .row.form-group
+                                    label(for="price").col-form-label.col-sm-3
+                                        b Ürün Güncel Fiyatı:
+                                    .col-sm-9
+                                        input#price.form-control(type='number' name='price')
+                                .row.form-group
+                                    label(for="desc").col-form-label.col-sm-3
+                                        b Ürün Açıklaması:
+                                    .col-sm-9
+                                        input#desc.form-control(type='text' name='desc')
+                                .row.form-group
+                                    label(for="img").col-form-label.col-sm-3
+                                        b Ürün fotoğrafı:
+                                    .col-sm-9
+                                        input#img.form-control-file(type='file' name='img')
+                                .row.form-group
+                                    label(for="category").col-form-label.col-sm-3
+                                        b Ürün kategorisi:
+                                    .col-sm-9
+                                        select.form-control#category(name='categoryid')
+                                            option(value="-1") Kategori Seçin
+                                            each ctg in categoryList
+                                                option(value=`${ctg.id}`) #{ctg.name}
+                                .row.form-group
+                                    label(for="market").col-form-label.col-sm-3
+                                        b Market:
+                                    .col-sm-9
+                                        select.form-control#market(name='marketid')
+                                            option(value="-1") Market Seçin
+                                            each mar in marketList
+                                                option(value=`${mar.id}`) #{mar.name}
+                                .form-group
+                                    .col-sm-6.offset-1
+                                        button.btn.btn-primary.offset-4(type='submit') Kaydet
+        .col-sm-6
+            .card
+                .card-header
+                    h3
+                        b Ürün Listesi
+                .card-body
+                    if products.length > 0
+                        table.table.table-bordered.table-sm
+                            thead
+                                tr
+                                    th Ürün Fotoğrafı
+                                    th Ürün Adı
+                                    th Ürün Açıklaması
+                                    th Ürün Fiyatı
+                                    th Market
+                            tbody
+                                tr
+                                    each pr in products
+                                        tr
+                                            td
+                                                img(src=`../img/productImages/${pr.img}` height="100px" width="100px")
+                                            td
+                                                span #{pr.name}
+                                            td
+                                                span #{pr.desc}
+                                            td
+                                                span #{pr.price} ₺
+                                            td
+                                                img(src=`../img/marketImages/${pr.market}.png`)
+                    else
+                        h1 Ürün Bulunamadı

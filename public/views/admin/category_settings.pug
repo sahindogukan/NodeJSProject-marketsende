@@ -1,0 +1,54 @@
+extends ../layout/admin-main-layout
+
+block content
+    .row
+        .col-md-12
+            if(action != null && action === "delete")
+                div.alert.alert-danger Kategori silme işlemi başarıyla tamamlandı.
+            if(action !== null && action === "add")
+                div.alert.alert-success Kategori ekleme işlemi başarıyla tamamlandı.
+            if(action !== null && action === "update")
+                div.alert.alert-primary Kategori güncelleme işlemi başarıyla tamamlandı.
+            .card
+                .card-header
+                    .row(style="margin-left:5px")
+                        span
+                            h3
+                                b Kategori Ayarları
+                            hr
+
+                            form.form-inline.my-2.my-lg-0
+                                a.btn.btn-outline-primary.ml-2(href='/admin' role='button') Admin Paneline Dön
+                                a.btn.btn-outline-primary.ml-2(href='/admin/add-category' role='button') Kategori Ekle
+
+
+
+
+                .card-body
+                    if categoryList.length > 0
+                        table.table.table-bordered
+                            thead.thead-dark
+                                tr
+                                    th Kategori id
+                                    th Kategori adı
+                                    th Kategori açıklaması
+                                    th
+                            tbody
+                                tr
+                                    each ctg in categoryList
+                                        tr
+                                            td
+                                                span.adminCategory(style="color:black") #{ctg.id}
+                                            td
+                                                span.adminCategory(style="color:black") #{ctg.name}
+                                            td
+                                                span.adminCategory(style="color:black") #{ctg.desc}
+                                            td
+                                                a.btn.btn-outline-primary.btn-sm(href=`/admin/edit-category/${ctg.id}`) Güncelle
+                                                form(action='/admin/delete-category' method="POST")
+                                                    input(type="hidden" name="ctg_id" value=`${ctg.id}`)
+                                                    button(type="submit").btn.btn-outline-danger.btn-sm.ml-2 Sil
+
+
+                    else
+                        h1 Kategori listesi boş.

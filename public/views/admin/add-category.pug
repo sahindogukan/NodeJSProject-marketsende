@@ -1,0 +1,30 @@
+extends ../layout/admin-main-layout
+
+block content
+    .row
+        .col-md-12
+            if(action != null && action === "error")
+                div.alert.alert-danger Lütfen bütün alanları eksiksiz doldurun.
+            .card
+                .card-header
+                    .row(style="margin-left:5px")
+                        span
+                            h3
+                                b Kategori Ekle
+                            hr
+
+                .card-body
+                    form(action='/admin/add-category' method="POST")
+                        .row.form-group
+                            label(for="c_name").col-form-label.col-sm-3
+                                b Kategori ismi:
+                            .col-sm-9
+                                input#c_name.form-control(type='text' name='c_name')
+                        .row.form-group
+                            label(for="c_desc").col-form-label.col-sm-3
+                                b Kategori açıklaması:
+                            .col-sm-9
+                                input#c_desc.form-control(type='text' name='c_desc')
+                        .form-group
+                            .col-sm-6.offset-1
+                                button.btn.btn-primary.offset-4(type='submit') Kategori Ekle

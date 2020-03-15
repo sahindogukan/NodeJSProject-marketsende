@@ -1,0 +1,68 @@
+extends ../layout/admin-main-layout
+block content
+    .row
+        .col-md-12
+            if(action !== null && action === "add")
+                div.alert.alert-success Ürün ekleme işlemi başarıyla tamamlandı.
+            if(action !== null && action === "delete")
+                div.alert.alert-danger Ürün silme işlemi başarıyla tamamlandı.
+            if(action !== null && action === "edit")
+                div.alert.alert-primary Ürün güncelleme işlemi başarıyla tamamlandı.
+            .card
+                .card-header
+                    h3
+                        b Ürün Listesi
+                    form.form-inline.my-2.my-lg-0
+                        input.form-control.mr-md-2(type='search' placeholder='Ürün ismi girin.' aria-label='Search')
+                        button.btn.btn-outline-secondary.my-2.my-sm-0(type='submit')
+                            i(class="fas fa-search") Ürün Ara
+                        a.btn.btn-outline-success.ml-5(href='/admin/add-product' role='button')
+                            i(class="fas fa-plus")  Ürün Ekle
+                        a.btn.btn-outline-primary.ml-2(href='/admin/market-settings' role='button')
+                            i(class="fas fa-cog")  Market Ayarları
+                        a.btn.btn-outline-primary.ml-2(href='/admin/category-settings' role='button')
+                            i(class="fas fa-cog")  Kategori Ayarları
+                        a.btn.btn-outline-primary.ml-2(href='/admin/slider-settings' role='button')
+                            i(class="fas fa-images")  Slider Ayarları
+
+
+
+                .card-body
+                    if products.length > 0
+                        table.table.table-bordered.table-hover.table-responsive-xl
+                            thead.thead-dark
+                                tr
+                                    th Ürün Fotoğrafı
+                                    th Ürün Adı
+                                    th Ürün Açıklaması
+                                    th Ürün Kategorisi
+                                    th Ürün Güncel Fiyatı
+                                    th Market
+                                    th
+                            tbody
+                                tr
+                                    each pr in products
+                                        tr(align="center")
+                                            td
+                                                img(src=`../img/productImages/${pr.img}` height="100px" width="100px")
+                                            td
+                                                span #{pr.name}
+                                            td
+                                                span #{pr.desc}
+                                            td
+                                                each ctg in categoryList
+                                                    if (pr.categoryid == ctg.id)
+                                                        span #{ctg.name}
+                                            td
+                                                span #{pr.price} ₺
+                                            td
+                                                each market in marketList
+                                                    if (pr.marketid == market.id)
+                                                        img(src=`../img/productImages/${market.logoImg}`)
+                                            td
+                                                a.btn.btn-primary.btn-sm(href=`/admin/edit-product/${pr.id}`) Güncelle
+                                                a.btn.btn-danger.btn-sm.ml-1(href=`/admin/delete-product/${pr.id}`) Sil
+
+
+                    else
+                        h1 Ürün Bulunamadı

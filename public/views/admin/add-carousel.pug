@@ -1,0 +1,35 @@
+extends ../layout/admin-main-layout
+
+block content
+    .row.mt-3
+        .card.mb-5(style="margin-left:auto; margin-right:auto; width: 50em;")
+            .card-body
+                h2 Carousel Fotoğrafı Ekle
+                hr
+                .row
+                    .col-md-9
+                        form(action='/admin/add-carousel' method="POST" enctype="multipart/form-data")
+                            .row.form-group
+                                label(for="img").col-form-label.col-sm-3
+                                    b Fotoğraf seçin:
+                                .col-sm-9
+                                    input#img.form-control-file(type='file' name='img')
+                            .row.form-group
+                                label(for="desc").col-form-label.col-sm-3
+                                    b Açıklama Ekle:
+                                .col-sm-9
+                                    input#desc.form-control(type="text" name="desc")
+                            .row.form-group
+                                label(for="isActive").col-form-label.col-sm-3
+                                    b Aktiflik:
+                                .col-sm-9
+                                    select.form-control#isActive(name='isActive')
+                                        option(value="-1") Anasayfada ilk gösterilen fotoğraf aktif olandır.
+                                        option(value="active") Aktif
+                                        option(value="notactive") Aktif Değil
+                            .form-group
+                                .col-sm-6.offset-1
+                                    form
+                                        button.btn.btn-outline-success.offset-4(type='submit') Kaydet
+                                        a.btn.btn-outline-danger.ml-2(href="admin/slider-settings") Vazgeç
+

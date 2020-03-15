@@ -1,0 +1,65 @@
+extends ../layout/admin-main-layout
+
+block content
+    .row
+        .col-md-12
+            if(action !== "undefined" && action === "delete")
+                div.alert.alert-danger Silme işlemi başarıyla tamamlandı.
+            if(action !== null && action === "add")
+                div.alert.alert-success Ekleme işlemi başarıyla tamamlandı.
+            if(action !== null && action === "update")
+                div.alert.alert-primary Güncelleme işlemi başarıyla tamamlandı.
+            if(action !== null && action === "error")
+                div.alert.alert-primary Hata. Fotoğraf alanı boş bırakılamaz.
+            .card
+                .card-header
+                    .row(style="margin-left:5px")
+                        span
+                            h3
+                                b Slider Ayarları
+                            hr
+                            div.alert.alert-primary Sliderın aktif çalışabilmesi için bir fotoğraf aktif olarak seçilmelidir. Aksi halde slider görünmez.
+                            hr
+
+                            form.form-inline.my-2.my-lg-0
+                                a.btn.btn-outline-primary.ml-2(href='/admin' role='button') Admin Paneline Dön
+                                a.btn.btn-outline-primary.ml-2(href='/admin/add-carousel' role='button')
+                                    i(class="fas fa-plus") Carousel Fotoğrafı Ekle
+
+                .card-body
+                    if sliders.length > 0
+                        table.table.table-bordered
+                            thead.thead-dark
+                                tr
+                                    th Fotoğraf id
+                                    th Fotoğraf
+                                    th Açıklama
+                                    th Aktif Fotoğraf
+                                    th
+                            tbody
+                                tr
+                                    each slider in sliders
+                                        tr(align="center")
+                                            td(height="100" width="150")
+                                                span.adminCategory(style="color:black") #{slider.id}
+                                            td(height="100" width="350")
+                                                img(src=`../img/productImages/${slider.img}` height="100" width="350")
+                                            td(height="100" width="350")
+                                                textarea.adminCategory(style="color:black; border:0" rows="4" cols="40") #{slider.desc}
+                                            td
+                                                if(slider.isActive=="active")
+                                                    span.adminCategory(style="color:black") Evet
+                                                else
+                                                    span.adminCategory(style="color:black") Hayır
+
+                                            td
+                                                a.btn.btn-outline-primary.btn-sm(href=`/admin/edit-slider/${slider.id}`) Güncelle
+                                                form(action='/admin/delete-slider' method="POST")
+                                                    input(type="hidden" name="id" value=`${slider.id}`)
+                                                    button(type="submit").btn.btn-outline-danger.btn-sm.ml-2 Sil
+
+
+
+
+                    else
+                        h1 Carousel listesi boş.
